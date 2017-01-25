@@ -88,7 +88,7 @@ public class VendingMachine {
 			} else if (selectedMenu == CYDER) {
 				if (cyderStock > 0) {
 					if (insertedMoney >= CYDER_PRICE) {
-						cokeStock -= 1;
+						cyderStock -= 1;
 						buyer.putDrink(CYDER);
 						insertedMoney -= CYDER_PRICE;
 					} else {
@@ -100,7 +100,7 @@ public class VendingMachine {
 			} else if (selectedMenu == FANTA) {
 				if (fantaStock > 0) {
 					if (insertedMoney >= FANTA_PRICE) {
-						cokeStock -= 1;
+						fantaStock -= 1;
 						buyer.putDrink(FANTA);
 						insertedMoney -= FANTA_PRICE;
 					} else {

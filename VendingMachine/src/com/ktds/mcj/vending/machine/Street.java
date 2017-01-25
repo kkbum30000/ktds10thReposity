@@ -4,6 +4,8 @@ public class Street {
 
 	public void start() {
 		Buyer buyer = new Buyer(10000);
+		buyer.setMoney(10000);
+		
 		VendingMachine vendingMachine = new VendingMachine(100, 10, 10, 10);
 		
 		buyer.buy(vendingMachine, 10000);
