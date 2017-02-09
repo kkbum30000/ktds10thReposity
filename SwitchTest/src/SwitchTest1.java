@@ -31,16 +31,25 @@ public class SwitchTest1 {
 		final int EAT = 7;
 		
 		// 현재의 상태를 저장할 숫자 변수를 만들고 1을 할당한다.
-		int nowState = READY;
+		int nowState = FIRE;
+		
+		FileWriteHelper.log("현재 상태 : " + nowState);
 		
 		// 라면 끓이기 프로세스를 정의한다.
 		switch ( nowState ) {
 		case READY : 
 			System.out.println("냄비를 꺼낸다.");
+<<<<<<< HEAD
 			FileWriteHelper.log("냄비를 꺼낸다.");
 		case WATER :
 			System.out.println("냄비를 물을 넣는다.");
 			FileWriteHelper.log("냄냄비를 물을 넣는다.");
+=======
+			FileWriteHelper.log("냄비를 꺼낸다");
+		case WATER :
+			System.out.println("냄비를 물을 넣는다.");
+			FileWriteHelper.log("냄비를 물을 넣는다.");
+>>>>>>> ff69b88e2508f4e7a315c72ea942424bd838b259
 		case FIRE :
 			System.out.println("가스불에 냄비를 올린다.");
 			FileWriteHelper.log("가스불에 냄비를 올린다.");
@@ -59,7 +68,11 @@ public class SwitchTest1 {
 			FileWriteHelper.log("맛있게 먹는다.");
 		default:
 			System.out.println("설거지를 한다.");
+<<<<<<< HEAD
 			FileWriteHelper.log("냄설거지를 한다.");
+=======
+			FileWriteHelper.log("설거지를 한다.");
+>>>>>>> ff69b88e2508f4e7a315c72ea942424bd838b259
 		}
 		
 		
