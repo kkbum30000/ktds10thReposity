@@ -37,21 +37,29 @@ public class SwitchTest1 {
 		switch ( nowState ) {
 		case READY : 
 			System.out.println("냄비를 꺼낸다.");
+			FileWriteHelper.log("냄비를 꺼낸다.");
 		case WATER :
 			System.out.println("냄비를 물을 넣는다.");
+			FileWriteHelper.log("냄냄비를 물을 넣는다.");
 		case FIRE :
 			System.out.println("가스불에 냄비를 올린다.");
+			FileWriteHelper.log("가스불에 냄비를 올린다.");
 		case BOIL :
 			System.out.println("물을 끓인다.");
+			FileWriteHelper.log("물을 끓인다.");
 			break; // switch를 종료한다.
 		case INJECT :
 			System.out.println("소스와 면을 넣는다.");
+			FileWriteHelper.log("소스와 면을 넣는다.");
 		case OFF :
 			System.out.println("익으면 불을 끈다.");
+			FileWriteHelper.log("익으면 불을 끈다.");
 		case EAT :
 			System.out.println("맛있게 먹는다.");
+			FileWriteHelper.log("맛있게 먹는다.");
 		default:
 			System.out.println("설거지를 한다.");
+			FileWriteHelper.log("냄설거지를 한다.");
 		}
 		
 		
