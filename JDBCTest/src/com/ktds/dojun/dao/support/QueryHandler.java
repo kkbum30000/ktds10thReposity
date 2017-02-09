@@ -11,4 +11,8 @@ public interface QueryHandler {
 	public Object getData(ResultSet rs);
 	
 	
+	
+	
+	
+	
 }

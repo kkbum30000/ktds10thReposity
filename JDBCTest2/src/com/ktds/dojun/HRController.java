@@ -8,10 +8,9 @@ public class HRController {
 	public void start() {
 
 		HRBiz hrBiz = new HRBizImpl();
-		hrBiz.printAllEmployees();
-		// hrBiz.printAllEmployeesWithDP();
-		// hrBiz.printAllEmployeesWithDPAndJob();
-		// hrBiz.printAllCountriesWithRegions();
+		// hrBiz.printAllEmployees();
+		// hrBiz.printAllEmployeesWithDp();
+		
 		// hrBiz.findOneEmployee(110);
 	}
 

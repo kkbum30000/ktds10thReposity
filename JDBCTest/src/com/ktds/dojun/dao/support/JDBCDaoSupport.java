@@ -11,71 +11,70 @@ import java.util.List;
 public abstract class JDBCDaoSupport {
 
 	public List selectList(QueryHandler queryHandler) {
-		
+
 		loadOracleDriver();
-		
+
 		// 2. JDBC Instance 생성
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		
+
 		try {
 			conn = getConnection();
-			
+
 			// Query 생성하기..
 			String query = queryHandler.preparedQuery();
 			stmt = conn.prepareStatement(query);
-			
+
 			// 파라미터 맵핑하기
 			queryHandler.mappingParameters(stmt);
-			
+
 			rs = stmt.executeQuery();
-			
+
 			List result = new ArrayList();
-			while(rs.next()) {
+			while (rs.next()) {
 				// ROW 객체 생성하기
 				result.add(queryHandler.getData(rs));
 			}
-			
+
 			return result;
-			
+
 		} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage(), e);
 		} finally {
 			close(conn, stmt, rs);
 		}
 	}
-	
+
 	public Object selectOne(QueryHandler queryHandler) {
-		
+
 		loadOracleDriver();
-		
+
 		// 2. JDBC Instance 생성
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		
-		
+
 		try {
 			conn = getConnection();
-			
+
 			// Query 생성하기..
 			String query = queryHandler.preparedQuery();
 			stmt = conn.prepareStatement(query);
-			
+
 			// 파라미터 맵핑하기
 			queryHandler.mappingParameters(stmt);
-			
+
 			rs = stmt.executeQuery();
-			
+
 			Object result = null;
 			if (rs.next()) {
 				// ROW 객체 생성하기
 				result = queryHandler.getData(rs);
 			}
-			
+
 			return result;
-			
+
 		} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage(), e);
 		} finally {
@@ -91,12 +90,12 @@ public abstract class JDBCDaoSupport {
 			throw new RuntimeException(e.getMessage(), e);
 		}
 	}
-	
+
 	private Connection getConnection() throws SQLException {
 		String oracleUrl = "jdbc:oracle:thin:@localhost:1521:XE";
 		return DriverManager.getConnection(oracleUrl, "HR", "hrhr");
 	}
-	
+
 	private void close(Connection conn, PreparedStatement stmt, ResultSet rs) {
 		try {
 			if (rs != null) {
@@ -117,5 +116,5 @@ public abstract class JDBCDaoSupport {
 		} catch (SQLException e) {
 		}
 	}
-	
+
 }

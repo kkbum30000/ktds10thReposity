@@ -1,4 +1,4 @@
-package com.ktds.dojun.dao.support.annotation;
+package com.ktds.dojun.daosupport.annotation;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

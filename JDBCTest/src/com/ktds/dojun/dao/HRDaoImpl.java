@@ -44,7 +44,7 @@ public class HRDaoImpl extends JDBCDaoSupport implements HRDao {
 				EmployeesVO employeesVO = new EmployeesVO();
 				BindData.bindData(rs, employeesVO);
 				
-				return null;
+				return employeesVO;
 			}
 
 		}); // 인터페이스를 객체화 하기 불가능하므로, 구체화한다.

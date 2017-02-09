@@ -1,32 +1,34 @@
 package com.ktds.dojun.vo;
 
+import com.ktds.dojun.daosupport.annotation.Types;
+
 public class EmployeesVO {
 
 	
 	
-	
+	@Types
 	private int employeeId;
-	
+	@Types
 	private String firstName;
-	
+	@Types
 	private String lastName;
-	
+	@Types
 	private String email;
-	
+	@Types
 	private String phoneNumber;
-	
+	@Types
 	private String hireDate;
-	
+	@Types
 	private String jobId;
-	
+	@Types
 	private int salary;
-	
-	private int commissionPct;
-	
+	@Types
+	private double commissionPct;
+	@Types
 	private int managerId;
-	
+	@Types
 	private int departmentId;
-	
+	@Types
 	private DepartmentsVO departmentsVO;
 	
 	
@@ -96,7 +98,7 @@ public class EmployeesVO {
 		this.salary = salary;
 	}
 
-	public int getCommissionPct() {
+	public double getCommissionPct() {
 		return commissionPct;
 	}
 
